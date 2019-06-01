@@ -13,6 +13,7 @@ export class ColorComponent implements FocusableOption {
   constructor (private elementRef: ElementRef) {}
 
   focus () {
+    console.log('FOCUS')
     this.elementRef.nativeElement.focus();
   }
 }
