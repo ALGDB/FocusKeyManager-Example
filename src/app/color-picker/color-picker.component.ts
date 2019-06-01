@@ -130,6 +130,7 @@ export class ColorPickerComponent
   }
 
   ngAfterViewInit(): void {
+    console.log('ngAfterViewInit')
     this.keyManager = new FocusKeyManager(this.colorComponents)
       .withHorizontalOrientation(this.dir.value)
       .withVerticalOrientation(false);
@@ -137,7 +138,7 @@ export class ColorPickerComponent
     this.setActiveItem(this.value);
 
     console.log(this.colorComponents);
-    this.colorComponents.changes.subscribe((ch) => console.log(ch));
+    this.colorComponents.changes.subscribe((ch) => console.log('changes',ch));
   }
 
   registerOnChange(fn: any): void {
@@ -201,5 +202,7 @@ export class ColorPickerComponent
       );
     }
   }
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    console.log('DESTROYED')
+  }
 }
