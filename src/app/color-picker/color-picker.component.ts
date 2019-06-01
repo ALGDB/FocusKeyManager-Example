@@ -125,7 +125,6 @@ export class ColorPickerComponent
         )
         .filter(Boolean);
     }
-    console.log('chNGE');
 
     this.setActiveItem(this.value);
   }
@@ -136,6 +135,9 @@ export class ColorPickerComponent
       .withVerticalOrientation(false);
 
     this.setActiveItem(this.value);
+
+    console.log(this.colorComponents);
+    this.colorComponents.changes.subscribe((ch) => console.log(ch));
   }
 
   registerOnChange(fn: any): void {
@@ -146,7 +148,6 @@ export class ColorPickerComponent
   }
 
   setActiveItem(color: string): void {
-    console.log('setActiveItem');
     if (color && this.keyManager) {
       this.keyManager.setActiveItem(this.colors.indexOf(color));
     }
@@ -157,7 +158,7 @@ export class ColorPickerComponent
   }
 
   onGridCellKeyDown(ev: KeyboardEvent, color: string): void {
-    console.log(ev, color);
+      console.log(this.colorComponents);
     if (
       // tslint:disable-next-line: deprecation
       ev.keyCode === ENTER ||
@@ -178,8 +179,9 @@ export class ColorPickerComponent
       ev.which === UP_ARROW ||
       ev.key === 'ArrowUp'
     ) {
+
+
       const index = this.keyManager.activeItemIndex - this.rowSize;
-      console.log(index);
       this.keyManager.setActiveItem(
         index >= 0 ? index : this.keyManager.activeItemIndex
       );
@@ -193,7 +195,6 @@ export class ColorPickerComponent
       ev.key === 'ArrowDown'
     ) {
       const index = this.keyManager.activeItemIndex + this.rowSize;
-      console.log(index);
 
       this.keyManager.setActiveItem(
         index < this.colors.length ? index : this.keyManager.activeItemIndex
