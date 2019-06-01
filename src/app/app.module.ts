@@ -9,14 +9,14 @@ import { BidiModule } from '@angular/cdk/bidi';
 import { AppComponent } from './app.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { ColorPickerTriggerDirective} from './color-picker/color-picker-trigger.directive';
-import { ColorDirective } from './color-picker/color.directive';
+import { ColorComponent } from './color-picker/color/color.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ColorPickerComponent,
     ColorPickerTriggerDirective,
-    ColorDirective
+    ColorComponent
   ],
   imports: [
     BrowserModule,
