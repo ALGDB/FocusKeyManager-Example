@@ -8,7 +8,7 @@
     "zone.js": "0.8.26",
     "@types/node": "6.0.118",
     "@angular/cdk": "6.4.7",
-    "@angular/core": "6.1.9",
+    "@angular/core": "11.0.5",
     "@angular/http": "6.1.9",
     "@angular/forms": "6.1.9",
     "@angular/common": "6.1.9",
